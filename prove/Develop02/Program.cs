@@ -4,7 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-<<<<<<< HEAD
+//<<<<<<< HEAD
         string _userSelection = "0";
         while (_userSelection != "5")
         {
@@ -43,8 +43,5 @@ class Program
         Console.WriteLine("you chosed 5. Quit, good bye");
         }
         }
-=======
-        Console.WriteLine("Hello Develop02 World! knicks");
->>>>>>> 2e3985917dc8dade5c7011c386fc94a31f79f82f
     }
 }
