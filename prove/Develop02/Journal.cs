@@ -1,44 +1,43 @@
+using System;
 using System.IO;
 using System.Collections.Generic;
 public class Journal
 {
-    public List<string> _entries = new List<string>();
-
+    public List<Entry> _entries = new List<Entry>();
 
     public Journal()
     {
+        
     }
 
     public void DisplayAll()
     {
-        Journal cuatro = new Journal();
+    
         Console.WriteLine("\nEntries: \n");
-        foreach (var entries in cuatro._entries)
+        foreach (var entries in _entries)
         {
-            Console.WriteLine(entries);
+            Console.WriteLine(entries._date);
+            Console.WriteLine(entries._promptText);
+            Console.WriteLine(entries._entryText);
         }
     }
 
     public void AddEntry()
     {
+        Entry tres = new Entry();
         DateTime theCurrentTime = DateTime.Now;
-        Entry entryInstance = new Entry ();
-        entryInstance._date = theCurrentTime.ToShortDateString();
-        entryInstance._promptText = PromptGenerator.GetRandomPrompt();
-        Console.WriteLine($"\n{entryInstance._promptText}\n");
-        entryInstance._entryText = Console.ReadLine();
+        tres._date = theCurrentTime.ToShortDateString();
+        tres._promptText = PromptGenerator.GetRandomPrompt();
+        Console.WriteLine($"\n{tres._promptText}\n");
+        tres._entryText = Console.ReadLine();
+       
+       _entries.Add(tres);
 
-        Journal tres = new Journal();
-        tres._entries.Add(entryInstance._date);
-        tres._entries.Add(entryInstance._promptText);
-        tres._entries.Add(entryInstance._entryText);
-
-        Console.WriteLine($"\nyour complete entry is the following:\n {entryInstance._date}\n {entryInstance._promptText}\n {entryInstance._entryText}\n");
-        foreach (var entries in tres._entries)
+        Console.WriteLine($"\nyour complete entry is the following:\n {tres._date}\n {tres._promptText}\n {tres._entryText}\n");
+        /*foreach (var entries in _entries)
         {
             Console.WriteLine(entries);
-        }
-        return;
+        }*/
     }
     public void SaveToFile()
     {

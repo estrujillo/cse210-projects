@@ -1,10 +1,12 @@
 using System;
+using System.IO;
+using System.Collections.Generic;
 
 class Program
 {
     static void Main(string[] args)
     {
-//<<<<<<< HEAD
+        Journal uno = new Journal ();
         string _userSelection = "0";
         while (_userSelection != "5")
         {
@@ -21,14 +23,12 @@ class Program
         {
             //I show creativity and exceeds core requirements reading a file with prompts and return random one.
         Console.WriteLine("\nyou chosed 1. Write\n");
-        Journal uno = new Journal ();
         uno.AddEntry();
         }
         else if (_userSelection == "2")
         {
         Console.WriteLine("you chosed 2. Display");
-        Journal dos = new Journal();
-        dos.DisplayAll();
+        uno.DisplayAll();
         }
         else if (_userSelection == "3")
         {
