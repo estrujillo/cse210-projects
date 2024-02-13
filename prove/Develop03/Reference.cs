@@ -15,13 +15,6 @@ public class Reference
     _verseEnd = verseEnd;
     }
 
-    public Reference (string book, int chapter, int verseStart)
-    {
-    _book = book;
-    _chapter = chapter;
-    _verse = verseStart;
-    }
-
     public string GetText()
     {
         return $"{_book} {_chapter}:{_verse}-{_verseEnd}";
