@@ -2,21 +2,26 @@ using System;
 
 class Product
 {
-    private string name;
-    private string productId;
-    private decimal price;
-    private int quantity;
+    private string _name;
+    private string _productId;
+    private decimal _price;
+    private int _quantity;
 
     public Product(string name, string productId, decimal price, int quantity)
     {
-        this.name = name;
-        this.productId = productId;
-        this.price = price;
-        this.quantity = quantity;
+        _name = name;
+        _productId = productId;
+        _price = price;
+        _quantity = quantity;
     }
 
     public decimal GetTotalCost()
     {
-        return price * quantity;
+        return _price * _quantity;
+    }
+
+    public override string ToString()
+    {
+        return $"Name {_name}, ID: {_productId}, Qunatity: {_quantity}";
     }
 }

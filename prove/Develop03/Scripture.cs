@@ -13,7 +13,7 @@
             {
              Word word = new Word(x);
              _words.Add(word);
-             Console.WriteLine(word);             
+             Console.WriteLine(word);    
             }
         }
 

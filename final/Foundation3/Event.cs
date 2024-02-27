@@ -1,24 +1,24 @@
 class Event
 {
-protected string title;
-    protected string description;
-    protected DateTime date;
-    protected TimeSpan time;
-    protected Address address;
+protected string _title;
+    protected string _description;
+    protected DateTime _date;
+    protected TimeSpan _time;
+    protected Address _address;
 
     public Event(string title, string description, DateTime date, TimeSpan time, string streetAddress, 
                  string city, string state, string country)
     {
-        this.title = title;
-        this.description = description;
-        this.date = date;
-        this.time = time;
-        this.address = new Address(streetAddress, city, state, country);
+        _title = title;
+        _description = description;
+        _date = date;
+        _time = time;
+        _address = new Address(streetAddress, city, state, country);
     }
 
     public virtual string GetStandardDetails()
     {
-        return $"Title: {title}\nDescription: {description}\nDate: {date.ToShortDateString()}\nTime: {time}\nAddress: {address}";
+        return $"Title: {_title}\nDescription: {_description}\nDate: {_date.ToShortDateString()}\nTime: {_time}\nAddress: {_address}";
     }
 
     public virtual string GetFullDetails()
@@ -28,6 +28,6 @@ protected string title;
 
     public virtual string GetShortDescription()
     {
-        return $"Type: {GetType().Name}\nTitle: {title}\nDate: {date.ToShortDateString()}";
+        return $"Type: {GetType().Name}\nTitle: {_title}\nDate: {_date.ToShortDateString()}";
     }
     }

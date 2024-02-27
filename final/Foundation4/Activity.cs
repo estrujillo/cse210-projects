@@ -3,8 +3,8 @@ using System;
 // Base Activity class
 public abstract class Activity
 {
-    protected DateTime Date { get; set; }
-    protected int DurationMinutes { get; set; }
+    protected DateTime _Date { get; set; }
+    protected int _DurationMinutes { get; set; }
 
     // Abstract methods to be implemented by derived classes
     public abstract double GetDistance();
@@ -14,6 +14,6 @@ public abstract class Activity
     // Method to generate summary information
     public virtual string GetSummary()
     {
-        return $"{Date.ToString("dd MMM yyyy")} - {GetType().Name} ({DurationMinutes} min): " + $"Distance: {GetDistance()} km, Speed: {GetSpeed()} kph, Pace: {GetPace()} min per km";
+        return $"{_Date.ToString("dd MMM yyyy")} - {GetType().Name} ({_DurationMinutes} min): " + $"Distance: {GetDistance()} km, Speed: {GetSpeed()} kph, Pace: {GetPace()} min per km";
     }
 }

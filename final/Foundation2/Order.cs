@@ -2,44 +2,44 @@ using System;
 
 class Order
 {
-   private Customer customer;
-    private List<Product> products;
+   private Customer _customer;
+   private List<Product> _products = new List<Product>();
 
-    public Order(Customer customer)
+    public Order(List<Product> products, Customer customer)
     {
-        this.customer = customer;
-        products = new List<Product>();
+        _customer = customer;
+        _products = products;
     }
 
-    public void AddProduct(Product product)
+    /*public void AddProduct(Product products)
     {
-        products.Add(product);
-    }
+        _products.Add(products);
+    }*/
 
     public string GetPackingLabel()
     {
-        string label = "";
-        foreach (var product in products)
+        string _label = "";
+        foreach (Product product in _products)
         {
-            label += $"{product.name} ({product.productId})\n";
+            _label += $"{product.ToString()}\n";
         }
-        return label;
+        return _label;
     }
 
     public string GetShippingLabel()
     {
-        return customer.name + "\n" + customer.address.ToString();
+        return $"Customer: {_customer.name}\nAddress:\n{_customer.address}";
     }
 
     public decimal CalculateTotalPrice()
     {
         decimal totalPrice = 0;
-        foreach (var product in products)
+        foreach (Product product in _products)
         {
             totalPrice += product.GetTotalCost();
         }
-        // Add shipping cost
-        if (customer.IsInUSA())
+        //Add shipping cost
+        if (_customer.LivesInUSA())
         {
             totalPrice += 5; // USA shipping cost
         }

@@ -1,20 +1,20 @@
 class Address 
 {
-    private string streetAddress;
-    private string city;
-    private string state;
-    private string country;
+    private string _streetAddress;
+    private string _city;
+    private string _state;
+    private string _country;
 
     public Address(string streetAddress, string city, string state, string country)
     {
-        this.streetAddress = streetAddress;
-        this.city = city;
-        this.state = state;
-        this.country = country;
+        _streetAddress = streetAddress;
+        _city = city;
+        _state = state;
+        _country = country;
     }
 
     public override string ToString()
     {
-        return $"{streetAddress}, {city}, {state}, {country}";
+        return $"{_streetAddress}, {_city}, {_state}, {_country}";
     }
 }

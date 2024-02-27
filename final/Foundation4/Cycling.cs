@@ -1,27 +1,27 @@
 // Derived class for Cycling activity
 public class Cycling : Activity
 {
-    public double Speed { get; set; }
+    public double _speed { get; set; }
 
     public Cycling(DateTime date, int durationMinutes, double speed)
     {
-        Date = date;
-        DurationMinutes = durationMinutes;
-        Speed = speed;
+        _Date = date;
+        _DurationMinutes = durationMinutes;
+        _speed = speed;
     }
 
     public override double GetDistance()
     {
-        return Speed * (DurationMinutes / 60.0);
+        return _speed * (_DurationMinutes / 60.0);
     }
 
     public override double GetSpeed()
     {
-        return Speed;
+        return _speed;
     }
 
     public override double GetPace()
     {
-        return 60 / Speed;
+        return 60 / _speed;
     }
 }
